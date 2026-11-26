@@ -1,0 +1,2 @@
+First line: practise redirection.
+Second line: practise appending.
