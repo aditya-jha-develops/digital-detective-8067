@@ -17,7 +17,7 @@ Updated the root README with a topic list, converter instructions and a learning
 | 4 | `hello.py` printed the expected greeting and the compiler/interpreter comparison was checked. |
 | 5 | All manual conversions checked with Python. The converter passed the three positive test cases. |
 | 6 | Staging and commits verified. The `update-about` branch and pull request are visible. The pull request is open. |
-| 7 | Concepts and website sequence documented. Brave reached the website. The task shell could not return a manual DNS answer. |
+| 7 | Concepts and website sequence documented. Brave reached the Workithm homepage, and a public DNS lookup returned two A records. |
 | 8 | Repository structure, evidence, learning summary and converter instructions reviewed. |
 
 ## 3. Commands / tools used
@@ -34,11 +34,11 @@ A reviewer should be able to find each mission, run the scripts and see the evid
 
 ## 5. Difficulties faced
 
-The manual DNS lookup in Mission 7 produced no result from the task shell.
+The Terminal DNS lookup in Mission 7 produced no result from the task shell.
 
 ## 6. How I resolved them
 
-Recorded the limitation and retained the verified browser observation. The report distinguishes the browser result from the manual DNS attempt.
+Verified the same public domain in the browser and an online DNS tool, and added both results to the networking report in a follow-up commit.
 
 ## 7. Evidence / files
 

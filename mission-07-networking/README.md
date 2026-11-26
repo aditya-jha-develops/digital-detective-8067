@@ -2,7 +2,7 @@
 
 ## 1. Task / objective
 
-Explain basic network concepts, test access to a public example website, try a DNS lookup and trace how an HTTPS page reaches a browser.
+Explain basic network concepts, test access to a public example website, perform a public DNS lookup and trace how an HTTPS page reaches a browser.
 
 ## 2. Work completed
 
@@ -11,7 +11,7 @@ Explain basic network concepts, test access to a public example website, try a D
 | LAN | Connects devices within a small area so they can communicate directly across the local network. | Laptops and a printer on the same home network. |
 | MAN | Links networks across a metropolitan area. | A citywide fibre network connecting municipal buildings. |
 | WAN | Links networks over longer distances, often across cities or countries. | A company's network connecting offices in Bengaluru and Chennai. |
-| DNS | Looks up records for a domain name. An A record contains an IPv4 address. | Finding the server address for `example.com`. |
+| DNS | Looks up records for a domain name. An A record contains an IPv4 address. | Finding an IPv4 address for `workithm.com`. |
 | Router | Forwards packets toward their destination across different networks. | A home router forwards traffic from the local network to the internet provider. |
 | Protocol | Defines the rules and format for messages exchanged between endpoints. | HTTPS uses HTTP semantics over a secure transport. |
 | Packet switching | Shares network links by carrying traffic in addressed packets that can be forwarded independently. | A webpage and a chat message can travel over the same connection to an internet provider. |
@@ -21,15 +21,16 @@ Explain basic network concepts, test access to a public example website, try a D
 
 | Check | What happened |
 | --- | --- |
-| Terminal HTTPS request | `curl` returned “Could not resolve host.” The request obtained no HTTP response in the task shell. |
-| Browser HTTPS request | Brave displayed **Example Domain** at `https://example.com/`, confirming the page was reachable from the browser. |
-| Terminal DNS lookup | `dig` returned “Operation not permitted” while opening a socket. This attempt produced no DNS answer. |
+| Terminal HTTPS request | The task shell's `curl` request for `https://workithm.com/` reported “Could not resolve host.” |
+| Browser HTTPS request | Brave displayed the public Workithm homepage at `https://workithm.com/`. |
+| Terminal DNS lookup | `dig` reported “Operation not permitted” while opening a socket. |
+| Browser DNS lookup | Nslookup.io's Cloudflare resolver view returned **two IPv4 A records** for `workithm.com`. The address values are omitted from this report. |
 
 ## 3. Commands / tools used
 
-- `curl --max-time 5 https://example.com/` requested the page with a five-second time limit. Output options suppressed the body and requested an HTTP status.
-- `dig +time=2 +tries=1 +short example.com A` tried to obtain the example domain's IPv4 address records.
-- Brave opened the public example page and showed its title and content.
+- `curl --max-time 5 https://workithm.com/` requested the page with a five-second time limit. Output options suppressed the body and requested an HTTP status.
+- `dig +time=2 +tries=1 +short workithm.com A` tried to obtain the domain's IPv4 address records.
+- Brave displayed the Workithm homepage. [Nslookup.io](https://www.nslookup.io/) queried public DNS for the same domain, and its A records table showed two results.
 
 ## 4. My understanding
 
@@ -46,16 +47,16 @@ An HTTPS connectivity check tests whether the client can complete the steps need
 
 ## 5. Difficulties faced
 
-The task shell could not resolve the hostname for the HTTPS request, and its DNS utility could not open a socket. A usable manual DNS answer was unavailable during this run.
+The task shell could not resolve the hostname for the HTTPS request, and its DNS utility could not open a socket.
 
 ## 6. How I resolved them
 
-Used Brave on the same Mac to verify the website could open and recorded the Terminal errors alongside the browser result. The manual DNS result remains unverified.
+Opened the website in Brave on the same Mac and ran a separate public DNS query in Nslookup.io. Compared the successful browser checks with the corresponding task-shell errors.
 
 ## 7. Evidence / files
 
-The observations above record the public example domain, the browser page title and the Terminal outcomes. Personal network details are omitted.
+The table above records the domain, the browser result, the task-shell outcomes and the number of A records returned. It omits address values and personal network details.
 
 ## 8. Commit details
 
-**Explain networking concepts and website communication** is the Mission 7 checkpoint on GitHub's `main` branch.
+**Explain networking concepts and website communication** is the original Mission 7 checkpoint on GitHub's `main` branch. **Verify public DNS records for the networking mission** records the follow-up lookup.
