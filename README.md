@@ -17,3 +17,9 @@ A practical investigation of how a Mac handles input, files, programs, data and 
 | 8 | [Final review](mission-08-final-report/README.md) |
 
 Each mission is documented, committed and pushed as a separate checkpoint.
+
+## My Learning
+
+- Staging selects the version of a file that will go into the next commit. Publishing the commit makes it visible to someone opening the repository on GitHub.
+- The two shell redirection operators have different effects. A single `>` replaces a file and `>>` adds to its end.
+- Binary and hexadecimal can express the same value with different digits. Python's prefixes show which representation is displayed.
