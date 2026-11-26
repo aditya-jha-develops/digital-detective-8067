@@ -6,7 +6,7 @@ Stage and commit a specific README, inspect commit history, and use a separate b
 
 ## 2. Work completed
 
-Checked the assignment repository status, staged this README and inspected the Git history.
+Checked the assignment repository status, staged this README and inspected the Git history. Created and published `update-about` with a separate root README change. Opened [pull request #1](https://github.com/aditya-jha-develops/digital-detective-8067/pull/1) into `main` and reviewed its one-file diff. The pull request remains open, as the merge is conditional on the instructor's direction. Returned to the local `main` branch.
 
 ## 3. Commands / tools used
 
@@ -30,16 +30,16 @@ Staging selects the exact file changes for the next snapshot. Committing records
 
 ## 5. Difficulties faced
 
-No major difficulties.
+A branch created from `origin/main` initially tracked `origin/main`, even though the new branch needed its own remote branch.
 
 ## 6. How I resolved them
 
-Not applicable.
+Removed the inherited tracking setting with `git branch --unset-upstream update-about`. Published `update-about` and checked that it now tracks `origin/update-about`.
 
 ## 7. Evidence / files
 
-Git history records the staging and branch exercises.
+The [learning branch](https://github.com/aditya-jha-develops/digital-detective-8067/tree/update-about) contains the `My Learning` change. The [pull request diff](https://github.com/aditya-jha-develops/digital-detective-8067/pull/1/changes) shows the single changed file, the root README.
 
 ## 8. Commit details
 
-**Record Git staging and command workflow** records the first Git exercise.
+**Record Git staging and command workflow** records the first Git exercise on `main`. **Add My Learning section to the project README** was pushed on `update-about`. **Complete Git and GitHub collaboration mission** is the Mission 6 checkpoint on GitHub's `main` branch.
